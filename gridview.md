@@ -1,4 +1,69 @@
 Use the GridView widget to display a grid of images.
+
+```
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'GridView with Rounded Images',
+      home: ImageGridScreen(),
+    );
+  }
+}
+
+class ImageGridScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Rounded Asset Images Grid'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.count(
+          crossAxisCount: 2, // 2 columns
+          crossAxisSpacing: 8.0,
+          mainAxisSpacing: 8.0,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Image.asset('assets/image1.jpg', fit: BoxFit.cover),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Image.asset('assets/image2.jpg', fit: BoxFit.cover),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Image.asset('assets/image3.jpg', fit: BoxFit.cover),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Image.asset('assets/image4.jpg', fit: BoxFit.cover),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Image.asset('assets/image5.jpg', fit: BoxFit.cover),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Image.asset('assets/image6.jpg', fit: BoxFit.cover),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+```
+
 ```
 import 'package:flutter/material.dart';
 
